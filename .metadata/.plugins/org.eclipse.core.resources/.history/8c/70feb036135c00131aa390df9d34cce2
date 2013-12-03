@@ -1,0 +1,9 @@
+package client;
+
+import others.Methods;
+
+public class Client {
+	public Client(String arg[]){
+		Methods.checkArguments(arg);
+	}
+}

@@ -1,0 +1,11 @@
+package client;
+
+import others.Methods;
+
+public class Client {
+	
+
+	public Client(int number, String ip) {
+		// TODO Auto-generated constructor stub
+	}
+}

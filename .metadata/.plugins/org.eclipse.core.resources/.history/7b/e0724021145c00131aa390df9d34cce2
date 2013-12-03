@@ -1,0 +1,10 @@
+package client;
+
+import others.Methods;
+
+public class Client {
+	
+
+	public Client(String ip,int number) {
+	}
+}

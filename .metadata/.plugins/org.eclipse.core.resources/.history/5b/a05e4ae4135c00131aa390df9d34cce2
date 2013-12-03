@@ -1,0 +1,30 @@
+package others;
+
+import client.Client;
+
+public class TestKlasse {
+	public static void main (String arg[]){
+		if(Methods.checkArguments(arg)){
+			if(arg[0].equals("Client")){
+				for (int i = 0; i < arg.length; i++) {
+					if (arg[i].equalsIgnoreCase("-a")) {
+						String ip = arg[i+1];
+					}
+					if (arg[i].equalsIgnoreCase("-n")) {
+						int number =Integer.parseInt(arg[i+1]);
+
+					}
+				}
+				new Client(ip,number);
+			}
+			
+			
+			
+			
+			
+		}
+		else{
+			Methods.usage();
+		}
+	}
+}

@@ -1,0 +1,14 @@
+package others;
+
+public class TestKlasse {
+	public static void main (String arg[]){
+		//Methods.checkArguments(arg);
+		if(Methods.checkArguments(arg)){
+			Methods.debug("true");
+		}
+		else{
+			Methods.debug("false");
+			Methods.usage();
+		}
+	}
+}

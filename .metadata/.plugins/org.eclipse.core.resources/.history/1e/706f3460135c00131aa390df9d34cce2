@@ -1,0 +1,22 @@
+package others;
+
+import client.Client;
+
+public class TestKlasse {
+	public static void main (String arg[]){
+		if(Methods.checkArguments(arg)){
+			if(arg[0].equals("Client")){
+				for()
+				new Client(Integer.parseInt(arg [5]), arg [3]);
+			}
+			
+			
+			
+			
+			
+		}
+		else{
+			Methods.usage();
+		}
+	}
+}
