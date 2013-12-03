@@ -1,0 +1,9 @@
+package client;
+
+import others.CheckInput;
+
+public class Client {
+	public static void main(String arg[]){
+		CheckInput.checkArgs(arg);
+	}
+}
