@@ -1,0 +1,12 @@
+
+package server;
+
+import java.math.BigDecimal;
+
+/**
+ * TODO alles kopiert!!!!!!!!! 
+ */
+public interface Calculator 
+{
+	public BigDecimal pi (int anzahl_nachkommastellen);
+}

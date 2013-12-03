@@ -1,0 +1,35 @@
+package client;
+
+import java.math.BigDecimal;
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+
+import others.Methods;
+import server.Calculator;
+
+public class Client {
+	public Client (String ip, int digits){
+		//TODO what:
+        System.setSecurityManager(new SecurityManager());
+		try {
+	        Methods.debug("hi");
+
+	        Calculator piServer = (Calculator) Naming.lookup("server");
+			BigDecimal pi = piServer.pi(digits);
+		    System.out.println("Client: "+pi.toString());  
+		    
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NotBoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+      
+	}
+}

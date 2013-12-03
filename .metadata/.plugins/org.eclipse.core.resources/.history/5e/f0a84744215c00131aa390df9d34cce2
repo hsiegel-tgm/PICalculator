@@ -1,0 +1,13 @@
+
+package server;
+
+import java.math.BigDecimal;
+import java.rmi.RemoteException;
+
+/**
+ * TODO alles kopiert!!!!!!!!! 
+ */
+public interface Calculator extends java.rmi.Remote
+{
+    public BigDecimal calcPi(int accuracy) throws RemoteException;
+}

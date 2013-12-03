@@ -1,0 +1,16 @@
+package client;
+
+import java.math.BigDecimal;
+
+import server.Calculator;
+
+public class Client {
+	public Client (String ip, int digits){
+		//TODO what:
+        System.setSecurityManager(new SecurityManager());
+
+        Calculator piServer = (Calculator) Naming.lookup("//"+ip+"/StandardBalancier");
+        BigDecimal pi = piServer.calcPi(digits);
+        System.out.println("Client: "+pi.toString());  
+	}
+}

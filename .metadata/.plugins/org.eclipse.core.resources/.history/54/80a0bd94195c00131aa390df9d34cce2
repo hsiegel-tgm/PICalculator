@@ -1,0 +1,5 @@
+package others;
+
+public interface Task<T> {
+    T execute();
+}

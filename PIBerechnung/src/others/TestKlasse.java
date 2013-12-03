@@ -1,10 +1,15 @@
 package others;
 
-import Rmi1.Client;
-import Rmi1.Server;
+import java.rmi.RemoteException;
+
+import client.Client;
+import server.Server;
 
 public class TestKlasse {
+
 	public static void main(String arg[]) {
+		String policy = "grant{permission java.security.AllPermission;};";
+		System.setProperty("java.security.policy", policy.toString());
 		if (Methods.checkArguments(arg)) {
 			if (arg[0].equals("Client")) {
 				String ip = "";
@@ -22,7 +27,6 @@ public class TestKlasse {
 			}
 
 			if (arg[0].equals("Balancer")) {
-
 				// new Balancer();
 			}
 			if (arg[0].equals("Server")) {
@@ -32,10 +36,28 @@ public class TestKlasse {
 						ip = arg[i + 1];
 					}
 				}
-				new Server(ip);
+				try {
+					new Server(ip);
+				} catch (RemoteException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		} else {
-			Methods.usage();
+			try {
+				new Server("0.0.0.0");
+			} catch (RemoteException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			try {
+				Thread.sleep(200);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			//new Client("192.168.175.1", 5);
+			// Methods.usage();
 		}
 	}
 }

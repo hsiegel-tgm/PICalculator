@@ -1,0 +1,57 @@
+package server;
+
+
+import java.math.BigDecimal;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.rmi.server.UnicastRemoteObject;
+
+import others.Methods;
+import others.PiBerechnung;
+
+public class Server implements Calculator {
+
+	public Server(String x) throws RemoteException {
+		super();
+		/*if (System.getSecurityManager() == null) {
+			System.setSecurityManager(new SecurityManager());
+		}*/
+		try {
+			String name = "Calculator";
+			//Calculator engine = new Server("");
+			Calculator stub = (Calculator) UnicastRemoteObject.exportObject(this,0);
+			System.out.println("23"+stub.toString());
+			if(stub==null){
+				Methods.debug("joooa");
+ 			}
+			Registry registry = LocateRegistry.getRegistry("localhost");
+			xxx(registry.list());
+			registry.bind(name, stub);
+			xxx(registry.list());
+
+			System.out.println("ComputeEngine bound");
+		} catch (Exception e) {
+			System.err.println("ComputeEngine exception:");
+			e.printStackTrace();
+		}
+	}
+
+	private void xxx(String[] s) {
+		if (s!=null){
+			for(int i =0; i<s.length;++i){
+				System.out.println("40 "+s[i]);
+			}
+		} 
+	}
+
+	@Override
+	public BigDecimal pi(int anzahl_nachkommastellen) throws RemoteException {
+		System.out.println("HIER");
+		return null;
+
+	}
+
+	
+
+}

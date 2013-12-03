@@ -1,0 +1,7 @@
+package server;
+
+import java.math.BigDecimal;
+
+public interface Calculator extends java.rmi.Remote {
+	public BigDecimal pi(int anzahl_nachkommastellen);
+}

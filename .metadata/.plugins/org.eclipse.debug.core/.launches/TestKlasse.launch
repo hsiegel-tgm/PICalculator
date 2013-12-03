@@ -7,6 +7,6 @@
 <listEntry value="1"/>
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="others.TestKlasse"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="Client -a 123.123.132.2 -n f"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="Server"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="PIBerechnung"/>
 </launchConfiguration>

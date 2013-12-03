@@ -1,0 +1,10 @@
+package client;
+
+public class Client {
+	public Client (String ip, int digits){
+		//TODO what:
+        System.setSecurityManager(new SecurityManager());
+
+        Calculator piServer = (Calculator) Naming.lookup("//"+args[0]+"/"+Proparties.balancierName);
+	}
+}

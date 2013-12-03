@@ -1,11 +1,9 @@
 package others;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
 
 public class Methods {
 	public static void debug(String x) {
-
 		System.out.println(x);
 	}
 
@@ -33,7 +31,7 @@ public class Methods {
 			return true;
 
 		} else if (arg[0].equals("Server") && arg.length == 3) {
-			return false;
+			return true;
 		} else {
 			return false;
 		}

@@ -1,0 +1,37 @@
+package server;
+
+
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.rmi.server.UnicastRemoteObject;
+
+import others.Methods;
+import others.PiBerechnung;
+
+public class Server  {
+
+	public Server(String x) throws RemoteException {
+		super();
+		/*if (System.getSecurityManager() == null) {
+			System.setSecurityManager(new SecurityManager());
+		}*/
+		try {
+			String name = "calcu";
+			Calculator engine = new PiBerechnung();
+			Calculator stub = (Calculator) UnicastRemoteObject.exportObject(engine,0);
+			if(stub==null){
+				Methods.debug("joooa");
+ 			}
+			Registry registry = LocateRegistry.getRegistry();
+			registry.bind(name, stub);
+			System.out.println("ComputeEngine bound");
+		} catch (Exception e) {
+			System.err.println("ComputeEngine exception:");
+			e.printStackTrace();
+		}
+	}
+
+	
+
+}

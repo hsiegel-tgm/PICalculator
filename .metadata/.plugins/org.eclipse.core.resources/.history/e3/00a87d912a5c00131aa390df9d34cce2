@@ -1,0 +1,6 @@
+import lang.Object;
+
+
+public class Task extends Object {
+
+}
