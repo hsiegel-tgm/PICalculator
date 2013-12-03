@@ -39,16 +39,13 @@ public class TestKlasse {
 				}
 				try {
 					new Server(ip);
-					Methods.debug("welcome 123");
-
 				} catch (RemoteException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
 		} else {
-			Methods.debug("printing usagen");
-
+			
 		 Methods.usage();
 		}
 	}

@@ -26,11 +26,10 @@ public class TestKlasse {
 				new Client(ip, number);
 			}
 
-			else if (arg[0].equals("Balancer")) {
+			if (arg[0].equals("Balancer")) {
 				// new Balancer();
 			}
-			else if (arg[0].equals("Server")) {
-				System.out.println("Server...");
+			if (arg[0].equals("Server")) {
 				String ip = "";
 				for (int i = 0; i < arg.length; i++) {
 					if (arg[i].equalsIgnoreCase("-a")) {
@@ -39,16 +38,13 @@ public class TestKlasse {
 				}
 				try {
 					new Server(ip);
-					Methods.debug("welcome 123");
-
 				} catch (RemoteException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
 		} else {
-			Methods.debug("printing usagen");
-
+			
 		 Methods.usage();
 		}
 	}

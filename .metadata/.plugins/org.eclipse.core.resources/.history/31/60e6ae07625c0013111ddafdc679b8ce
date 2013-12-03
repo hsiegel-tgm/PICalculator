@@ -47,8 +47,7 @@ public class TestKlasse {
 				}
 			}
 		} else {
-			Methods.debug("printing usagen");
-
+			
 		 Methods.usage();
 		}
 	}

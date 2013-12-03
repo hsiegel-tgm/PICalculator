@@ -30,7 +30,7 @@ public class Methods {
 			}
 			return true;
 
-		} else if (arg[0].equals("Server") && arg.length == 1) {
+		} else if (arg[0].equals("Server") && arg.length == 3) {
 			return true;
 		} else {
 			return false;

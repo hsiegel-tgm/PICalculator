@@ -17,12 +17,12 @@ public class Server implements Hello {
     public static void main(String args[]) {
     	String policy = "grant{permission java.security.AllPermission;};";
 		System.setProperty("java.security.policy", policy.toString());
-	/*	try {
-			Runtime.getRuntime().exec("rmiregistry"); //oder auch nich????
+		try {
+			Runtime.getRuntime().exec("rmiregistry");
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
-		}*/
+		}
     	try {
 
     	System.out.println(LocateRegistry.createRegistry(0));

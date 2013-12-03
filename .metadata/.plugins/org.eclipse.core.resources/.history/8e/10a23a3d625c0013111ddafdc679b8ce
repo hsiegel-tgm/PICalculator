@@ -8,14 +8,12 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
-import others.Methods;
 import server.Calculator;
 
 
 public class Client {
 	public Client(String ip, int digits) {
 		try {
-			Methods.debug("welcome cilen");
 			Registry registry = LocateRegistry.getRegistry(ip);
             
 			Calculator piServer = (Calculator) registry.lookup("Calculator");
