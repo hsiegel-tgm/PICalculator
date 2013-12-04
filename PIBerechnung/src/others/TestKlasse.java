@@ -1,5 +1,6 @@
 package others;
 
+import java.io.IOException;
 import java.rmi.RemoteException;
 
 import client.Client;
@@ -10,6 +11,11 @@ public class TestKlasse {
 	public static void main(String arg[]) {
 		String policy = "grant{permission java.security.AllPermission;};";
 		System.setProperty("java.security.policy", policy.toString());
+		try {
+			Runtime.getRuntime().exec("rmiregistry");
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
 		if (Methods.checkArguments(arg)) {
 			if (arg[0].equals("Client")) {
 				String ip = "";
@@ -30,7 +36,6 @@ public class TestKlasse {
 				// new Balancer();
 			}
 			else if (arg[0].equals("Server")) {
-				System.out.println("Server...");
 				String ip = "";
 				for (int i = 0; i < arg.length; i++) {
 					if (arg[i].equalsIgnoreCase("-a")) {
@@ -39,17 +44,13 @@ public class TestKlasse {
 				}
 				try {
 					new Server(ip);
-					Methods.debug("welcome 123");
-
 				} catch (RemoteException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
 		} else {
-			Methods.debug("printing usagen");
-
-		 Methods.usage();
+			Methods.usage();
 		}
 	}
 }

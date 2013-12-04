@@ -12,7 +12,5 @@ INDEX VERSION 1.126+C:\Users\Hannah\Documents\GitHub\PICalculator\.metadata\.plu
 4041092966.index
 808684182.index
 1115467115.index
-2546529755.index
-521605994.index
 163172794.index
 3974580528.index

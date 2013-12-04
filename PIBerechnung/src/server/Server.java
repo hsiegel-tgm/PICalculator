@@ -8,8 +8,6 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
-import others.Methods;
-import others.PiBerechnung;
 
 public class Server implements Calculator {
 	private static final long serialVersionUID = 1L;
@@ -20,20 +18,22 @@ public class Server implements Calculator {
 	/** rounding mode to use during pi computation */
 	private static final int roundingMode = BigDecimal.ROUND_HALF_EVEN;
 
-	public Server(String x) throws RemoteException {
-		super();
+	public Server(String ip_balancer) throws RemoteException {
+		//super();
 
 		try {
-			Methods.debug("welcome serveeer");
+			System.out.println("starting server...");
 
 			String name = "Calculator";
-			Calculator stub = (Calculator) UnicastRemoteObject.exportObject(
-					this, 0);
-
+			Calculator stub = (Calculator) UnicastRemoteObject.exportObject(this, 0);
 			Registry registry = LocateRegistry.getRegistry();
-			registry.bind(name, stub);
 
+			registry.bind(name, stub);
 			System.out.println("Server bound");
+			System.out.println("Press any key to unbound object");
+			System.in.read();
+            registry.unbind(name);
+            
 		} catch (Exception e) {
 			System.err.println("Server exception:");
 			e.printStackTrace();
@@ -91,8 +91,6 @@ public class Server implements Calculator {
 
 	public BigDecimal pi(int anzahl_nachkommastellen) throws RemoteException {
 		return computePi(anzahl_nachkommastellen);
-		// return null;
-
 	}
 
 }

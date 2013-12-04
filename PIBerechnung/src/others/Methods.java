@@ -8,6 +8,9 @@ public class Methods {
 	}
 
 	public static boolean checkArguments(String arg[]) {
+		if(arg.length==0){
+			return false;
+		}
 		if (arg[0].equals("Balancer") && arg.length == 1) {
 			return true;
 		} else if (arg[0].equals("Client") && arg.length == 5) {
